@@ -2,7 +2,7 @@ import {Cliente} from "./Cliente.js";
 import {ContaCorrente} from "./ContaCorrente.js";
 import {ContaPoupanca} from "./ContaPoupanca.js";
 
-const conta01 = new ContaCorrente(1001, new Cliente("Ricardo", 1234567890, 1212121212));
+const conta01 = new ContaCorrente(1001, new Cliente("Ricardo", 1234567890, 1212121212), 0);
 
 const conta02 = new ContaPoupanca(1001, new Cliente("Alice", 92345678901, 2121212121), 500);
 

@@ -28,6 +28,8 @@ export class Conta{
         this._agencia = agencia;
         this._cliente = cliente;
         this._saldo = saldo;
+        console.log(saldo);
+        console.log(this._saldo);
         console.log(cliente);
         console.log(typeof cliente);
     }
@@ -47,12 +49,15 @@ export class Conta{
 
     }
 
-    depositar(valor){        
+    depositar(valor){   
+        console.log("saldo atual: "+this.saldo);     
+        console.log("valor depositado: "+valor);
         if(valor <= 0){
             console.log("Operação Inválida. Sem valor ou negativo");
             return;
         }
         this.saldo += valor;
+        console.log("saldo atual: "+this.saldo);
         console.log("Depósito de R$"+valor+" realizado com sucesso. Seu saldo atual é de R$"+this.saldo);
         return this.saldo;
     }
@@ -65,7 +70,9 @@ export class Conta{
             console.log("Operação Inválida. Conta de destino inexistente");
             return;
         }
-        const valorSacado = this.sacar(valor);
-        contaDestino.depositar(valorSacado);   
+        console.log("valor enviado: "+valor);
+        this.sacar(valor);
+        console.log("valor recebito: "+valor);
+        contaDestino.depositar(valor);   
     }
 }
